@@ -20,7 +20,11 @@ public class ConcreteObserver implements Observer {
     @Override
     public void update(Subject subject) {
         //  Implement update method.
-        
+
+        if (subject instanceof ConcreteSubject){
+            int value= ((ConcreteSubject) subject).getValue();
+            System.out.println("Observer " + this.observerID + " notified. New Value is: " + value);
+        }
 
     }
 
